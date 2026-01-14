@@ -28,6 +28,8 @@ function App() {
   const prevRemainingRef = useRef(remainingSeconds)
 
   if (!audioRefs.current) {
+    const baseUrl = import.meta.env.BASE_URL || '/'
+    const withBase = (path) => `${baseUrl}${path.replace(/^\//, '')}`
     const createAudio = (sources, { loop = true, volume = 0.35 } = {}) => {
       let index = 0
       const audio = new Audio(sources[index])
@@ -47,22 +49,20 @@ function App() {
     }
 
     audioRefs.current = {
-      rain: createAudio(['/sounds/rain.mp3', '/sounds/rain.wav']),
+      rain: createAudio([withBase('sounds/rain.mp3'), withBase('sounds/rain.wav')]),
       forest: createAudio([
-        '/sounds/Forest sound.mp3',
-        '/sounds/Forest%20sound.mp3',
-        '/sounds/Forest sound.wav',
-        '/sounds/Forest%20sound.wav',
-        '/sounds/Forest sound.WAV',
-        '/sounds/Forest%20sound.WAV',
+        withBase('sounds/Forest%20sound.mp3'),
       ]),
-      bell: createAudio(['/sounds/bell.mp3', '/sounds/bell.wav']),
+      bell: createAudio([withBase('sounds/bell.mp3'), withBase('sounds/bell.wav')]),
     }
 
-    alarmRef.current = createAudio(['/sounds/bell.mp3', '/sounds/bell.wav'], {
+    alarmRef.current = createAudio(
+      [withBase('sounds/bell.mp3'), withBase('sounds/bell.wav')],
+      {
       loop: false,
       volume: 0.6,
-    })
+      }
+    )
   }
 
   const stopAllAudio = () => {
