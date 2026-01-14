@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'Sora', 'Segoe UI Variable', 'SF Pro Display', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #0f2a24;
+  background-color: #eef9f4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --accent: #2fbf71;
+  --accent-strong: #1f8f55;
+  --accent-warm: #6ee7b7;
+  --accent-bright: #b7f7d6;
+  --muted: #49645b;
+  --card: rgba(255, 255, 255, 0.92);
+  --stroke: rgba(15, 42, 36, 0.12);
+  --shadow: 0 24px 52px rgba(14, 44, 36, 0.18);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at 12% 18%, #c6f7e2 0, transparent 30%),
+    radial-gradient(circle at 84% 10%, #b7f7d6 0, transparent 26%),
+    radial-gradient(circle at 46% 86%, #a7f3d0 0, transparent 32%),
+    linear-gradient(180deg, #eafbf5 0%, #eef9f4 48%, #e3f5ee 100%);
+  color: #0f2a24;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: #b7f7d6;
+}
